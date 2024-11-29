@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com"; 
+import emailjs from "emailjs-com";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +12,7 @@ const Contact = () => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isError, setIsError] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -113,6 +116,35 @@ const Contact = () => {
                 Please fill out all fields correctly or check your internet connection.
               </div>
             )}
+
+            <div className="text-center mt-4">
+              <a 
+                href="https://www.linkedin.com/in/your-linkedin-profile" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn btn-dark mr-2"
+              >
+                <FontAwesomeIcon icon={faLinkedin} size="2x" className="mr-2" />
+              </a>
+
+              <a 
+                href="https://github.com/your-github-profile" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn btn-dark mr-2"
+              >
+                <FontAwesomeIcon icon={faGithub} size="2x" className="mr-2" />
+              </a>
+
+              <a 
+                href="https://www.facebook.com/your-facebook-profile" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn btn-dark"
+              >
+                <FontAwesomeIcon icon={faFacebook} size="2x" className="mr-2" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
