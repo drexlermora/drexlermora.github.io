@@ -1,8 +1,5 @@
-    // vite.config.js
-    import { defineConfig } from 'vite';
-    import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 
-    export default defineConfig({
-      plugins: [react()],
-      base: '/drexlermora.github.io/',  // No subdirectory, deploy to the root of the GitHub Pages domain
-    });
+export default defineConfig({
+  base: '/', // GitHub Pages for user/organization
+});
