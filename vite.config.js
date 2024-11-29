@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
-    import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react';
 
-    export default defineConfig({
-      plugins: [react()],
-      base: '/',  
-      plugins: [],  
-    });
+// Vite configuration
+export default defineConfig({
+  plugins: [react()],  // Ensure this plugin is enabled
+  base: '/',  // This is for GitHub Pages or root-level base paths
+});
