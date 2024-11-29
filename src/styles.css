@@ -37,7 +37,7 @@ ul {
   margin: 0 auto;
   padding: 0 15px;
 }
-
+/* Base navbar styles */
 .navbar {
   position: fixed;
   top: 0;
@@ -50,38 +50,84 @@ ul {
   transition: all 0.3s ease;
 }
 
-.navbar a {
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  margin: 0 1rem;
+}
+
+.nav-list a {
   color: #eaeaea;
   padding: 15px;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   transition: background-color 0.3s ease;
 }
 
 .navbar a:hover {
-  background-color: #67686d;
-  border-radius: 5px;
+  background-color: #cfd2dd;
+  border-radius: 10px;
   cursor: pointer;
 }
-
-.navbar ul {
-  display: flex;
-  justify-content: center;
-  margin-left: auto;
+/* Hamburger menu styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
 }
 
-.navbar li {
-  margin-left: 20px;
+.hamburger .bar {
+  background-color: white;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
 }
 
-.nav-list {
-  display: flex;
-  justify-content: flex-end;
-  list-style-type: none;
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-list {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: rgba(15, 1, 1, 0.85);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none; 
+    z-index: 1;
+  }
+
+  .nav-list.mobile {
+    display: flex; 
+  }
+
+  .nav-list li {
+    margin: 1rem 0;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-right: 10px;
+  }
+}
+
+/* Optional: Style for logo */
+.logo h2 {
+  font-size: 1.5rem;
   margin: 0;
-  padding: 0;
+  color: white;
 }
+
 
 .home-section {
   height: 80vh;

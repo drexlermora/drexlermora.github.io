@@ -23,7 +23,7 @@ const Contact = () => {
 
   const validateForm = () => {
     const { name, email, message } = formData;
-    return name && email && message && /\S+@\S+\.\S+/.test(email); // Basic email validation
+    return name && email && message && /\S+@\S+\.\S+/.test(email); 
   };
 
   const handleSubmit = (e) => {
