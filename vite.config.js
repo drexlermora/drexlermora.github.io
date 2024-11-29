@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/drexlermora.github.io/',  // No subdirectory, deploy to the root of the GitHub Pages domain
+  base: '/',  // No subdirectory, deploy to the root of the GitHub Pages domain
 });
