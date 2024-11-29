@@ -3,5 +3,6 @@ import { defineConfig } from 'vite';
 
     export default defineConfig({
       plugins: [react()],
-      base: '/',  // No subdirectory, deploy to the root of the GitHub Pages domain
+      base: '/',  
+      plugins: [],  
     });
