@@ -119,19 +119,7 @@ ul {
     display: flex;
     margin-right: 10px;
   }
-  .home-section {
-    height: 80vh;
-    background: url('/assets/bg2.jpg') no-repeat center center fixed;
-    background-size: cover;
-    text-align: center;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    filter: brightness(75%);
-  }
+  
 }
 
 /* Optional: Style for logo */
@@ -161,6 +149,15 @@ ul {
   font-size: 3.5rem;
   margin-bottom: 10px;
   text-transform: uppercase;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .home-section {
+    background: url('/assets/bg2.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll;
+  }
 }
 
 .home-section p {
