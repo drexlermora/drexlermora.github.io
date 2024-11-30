@@ -43,7 +43,7 @@ ul {
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(15, 1, 1, 0.85);
+  background-color: rgba(0, 0, 0, 0.85);
   color: white;
   padding: 20px 0;
   z-index: 10;
@@ -131,7 +131,7 @@ ul {
 
 .home-section {
   height: 80vh;
-  background: url('./assets/bg/bg1.webp') no-repeat center center fixed;
+  background: url('./assets/bg/bg2.jpg') no-repeat center center fixed;
   background-size: cover;
   text-align: center;
   color: white;
