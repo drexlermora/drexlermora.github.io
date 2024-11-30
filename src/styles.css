@@ -131,7 +131,7 @@ ul {
 
 .home-section {
   height: 80vh;
-  background: url('./assets/bg/bg.jpg') no-repeat center center fixed;
+  background: url('/assets/bg/bg2.jpg') no-repeat center center fixed;
   background-size: cover;
   text-align: center;
   color: white;
@@ -140,7 +140,7 @@ ul {
   justify-content: center;
   align-items: center;
   position: relative;
-  filter: brightness(90%);
+  filter: brightness(75%);
 }
 
 .home-section h1 {
