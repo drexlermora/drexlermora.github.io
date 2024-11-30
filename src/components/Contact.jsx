@@ -128,7 +128,7 @@ const Contact = () => {
               </a>
 
               <a 
-                href="https://github.com/your-github-profile" 
+                href="https://github.com/drexlermora" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn btn-dark mr-2"
