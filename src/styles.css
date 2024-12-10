@@ -274,3 +274,10 @@ ul {
   background-color: #ddd;
   cursor: not-allowed;
 }
+
+.round-image {
+  width: 150px; 
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}

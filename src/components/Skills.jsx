@@ -20,7 +20,7 @@ const Skills = () => {
     { title: "Oracle Database", imageSrc : "/assets/skills/oracle.png", text: "I have significant experience using Oracle as the database for various projects, including database design, management, and optimization. I am proficient in writing complex SQL queries, stored procedures, and triggers, and have a deep understanding of Oracle's advanced features such as indexing, partitioning, and performance tuning. I have worked on optimizing large-scale databases, ensuring high availability, data integrity, and security." },
     { title: "Building REST APIs", imageSrc : "/assets/skills/restapi.png",  text: "I have years of experience developing strong and scalable REST APIs, with a focus on delivering efficient, secure, and simple-to-use services. My experience includes creating API endpoints, managing HTTP methods (GET, POST, PUT, and DELETE), and assuring adequate status code handling for varied answers." },
   ];
-
+  
   const [currentPage, setCurrentPage] = useState(1);
   const skillsPerPage = 6;
 
