@@ -119,7 +119,7 @@ const Contact = () => {
 
             <div className="text-center mt-4">
               <a 
-                href="https://www.linkedin.com/in/your-linkedin-profile" 
+                href="https://www.linkedin.com/in/john-drexler-mora-3a7744122/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn btn-dark mr-2"
@@ -137,7 +137,7 @@ const Contact = () => {
               </a>
 
               <a 
-                href="https://www.facebook.com/your-facebook-profile" 
+                href="https://www.facebook.com/drexler.mora" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn btn-dark"
