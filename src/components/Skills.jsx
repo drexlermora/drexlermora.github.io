@@ -19,6 +19,8 @@ const Skills = () => {
     { title: "Oracle Database", imageSrc: "/assets/skills/oracle.png" },
     { title: "Building REST APIs", imageSrc: "/assets/skills/restapi.png" },
     { title: "AWS", imageSrc: "/assets/skills/aws.png" },
+    { title: "GitHub", imageSrc: "/assets/skills/github.png" },
+    { title: "Tortoise SVN", imageSrc: "/assets/skills/tortoise.png" }
   ];
 
   return (
