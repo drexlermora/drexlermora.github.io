@@ -24,45 +24,53 @@ const CardComponent = ({ title, imageSrc }) => {
   };
 
   return (
-    <Card
-      className="skill-card text-center"
-      style={{
-        width: '9rem', // Adjust width
-        height: '6rem', // Adjust height
-        backgroundColor: 'transparent',
-        border: '1px solid #3b82f6', // Glow border color applied from the start
-        boxShadow: '0 0 20px rgba(59, 130, 246, 0.8)', // Glow effect applied from the start
-        transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out',
-        cursor: 'pointer',
-        transform: `rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`, // Apply the tilt rotation
-      }}
-      onMouseMove={handleMouseMove} // Listen to mouse movement
-      onMouseLeave={handleMouseLeave} // Reset tilt on mouse leave
-    >
-      <Card.Body style={{ padding: '0.5rem' }}>
-        <Card.Img
-          variant="top"
-          src={imageSrc}
-          alt="Card image"
-          style={{
-            maxHeight: '4rem', // Reduce image size
-            objectFit: 'contain',
-            marginBottom: '0.3rem',
-            transition: 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out',
-          }}
-          className="hover-scale"
-        />
-        <Card.Title
-          style={{
-            color: 'white',
-            fontSize: '0.75rem',
-            transition: 'color 0.3s ease-in-out',
-          }}
-        >
-          {title}
-        </Card.Title>
-      </Card.Body>
-    </Card>
+    <div
+  className="d-flex justify-content-center mb-3"
+  style={{
+    width: '100%',
+  }}
+>
+  <Card
+    className="skill-card text-center"
+    style={{
+      width: '9rem',
+      height: '6rem',
+      backgroundColor: 'transparent',
+      border: '1px solid #3b82f6',
+      boxShadow: '0 0 20px rgba(59, 130, 246, 0.8)',
+      transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out',
+      cursor: 'pointer',
+      transform: `rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`,
+    }}
+    onMouseMove={handleMouseMove}
+    onMouseLeave={handleMouseLeave}
+  >
+    <Card.Body style={{ padding: '0.5rem' }}>
+      <Card.Img
+        variant="top"
+        src={imageSrc}
+        alt="Card image"
+        style={{
+          maxHeight: '4rem',
+          objectFit: 'contain',
+          marginBottom: '0.3rem',
+          transition: 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out',
+        }}
+        className="hover-scale"
+      />
+      <Card.Title
+        style={{
+          color: 'white',
+          fontSize: '0.75rem',
+          transition: 'color 0.3s ease-in-out',
+        }}
+      >
+        {title}
+      </Card.Title>
+    </Card.Body>
+  </Card>
+</div>
+
   );
 };
 
