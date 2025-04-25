@@ -24,19 +24,38 @@ const Skills = () => {
     { title: "Tortoise SVN", imageSrc: "/assets/skills/tortoise.png" }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.07,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
+    visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4 } },
+  };
+
   return (
     <section id="skills" className="skills-section text-center py-12">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-8">My Skills</h2>
 
-        <div className="row g-2 mt-4 flex flex-wrap justify-center">
+        <motion.div
+          className="row g-2 mt-4 flex flex-wrap justify-center"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {skills.map((skill, index) => (
             <motion.div
               key={index}
               className="col-lg-2 col-md-3 col-sm-4 mb-4 p-2"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
+              variants={itemVariants}
               whileHover={{ scale: 1.1 }}
             >
               <CardComponent
@@ -45,7 +64,7 @@ const Skills = () => {
               />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
