@@ -6,7 +6,8 @@ const CardComponent = ({ title, imageSrc }) => {
     <Card
       className="skill-card text-center"
       style={{
-        height: '8rem',
+        width: '9rem', // Adjust width
+        height: '6rem', // Adjust height
         backgroundColor: 'transparent',
         border: '1px solid rgba(255, 255, 255, 0.1)',
         boxShadow: 'none',
@@ -28,14 +29,14 @@ const CardComponent = ({ title, imageSrc }) => {
           src={imageSrc}
           alt="Card image"
           style={{
-            maxHeight: '3rem',
+            maxHeight: '4rem', // Reduce image size
             objectFit: 'contain',
-            marginBottom: '0.5rem',
+            marginBottom: '0.3rem',
             transition: 'transform 0.3s ease-in-out',
           }}
           className="hover-scale"
         />
-        <Card.Title style={{ color: 'white', fontSize: '0.85rem' }}>{title}</Card.Title>
+        <Card.Title style={{ color: 'white', fontSize: '0.75rem' }}>{title}</Card.Title> {/* Adjust font size */}
       </Card.Body>
     </Card>
   );
