@@ -1,5 +1,6 @@
 import React from "react";
 import CardComponent from "./others/CardComponent";
+import { motion } from "framer-motion";
 
 const Skills = () => {
   const skills = [
@@ -24,18 +25,25 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="skills-section text-center">
-      <div className="container">
-        <h2>My Skills</h2>
+    <section id="skills" className="skills-section text-center py-12">
+      <div className="container mx-auto">
+        <h2 className="text-3xl font-bold mb-8">My Skills</h2>
 
-        <div className="row g-2 mt-4"> {/* Reduce gap between grid items */}
+        <div className="row g-2 mt-4 flex flex-wrap justify-center">
           {skills.map((skill, index) => (
-            <div key={index} className="col-lg-2 col-md-3 col-sm-4 mb-3"> {/* Adjust grid sizes for 5 per row */}
+            <motion.div
+              key={index}
+              className="col-lg-2 col-md-3 col-sm-4 mb-4 p-2"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              whileHover={{ scale: 1.1 }}
+            >
               <CardComponent
                 imageSrc={skill.imageSrc}
                 title={skill.title}
               />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
