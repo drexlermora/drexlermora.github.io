@@ -25,19 +25,35 @@ const Skills = () => {
   ];
 
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: {},
     visible: {
-      opacity: 1,
       transition: {
         staggerChildren: 0.07,
-        delayChildren: 0.2
+        delayChildren: 0.3
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8, y: 20 },
-    visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4 } },
+    hidden: {
+      opacity: 0,
+      x: -100,
+      y: -50,
+      rotate: -10,
+      scale: 0.8
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      rotate: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 150,
+        damping: 15
+      }
+    }
   };
 
   return (
@@ -49,14 +65,15 @@ const Skills = () => {
           className="row g-2 mt-4 flex flex-wrap justify-center"
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }} // 👈 Trigger when 30% of the section is visible
         >
           {skills.map((skill, index) => (
             <motion.div
               key={index}
               className="col-lg-2 col-md-3 col-sm-4 mb-4 p-2"
               variants={itemVariants}
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.05, rotate: 2 }}
             >
               <CardComponent
                 imageSrc={skill.imageSrc}
