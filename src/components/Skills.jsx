@@ -26,7 +26,7 @@ const Skills = () => {
     { title: "Apache Tomcat", imageSrc: "/assets/skills/tomcat.png" },
     { title: "AWS", imageSrc: "/assets/skills/aws.png" },
     { title: "GitHub", imageSrc: "/assets/skills/github.png" },
-    { title: "Tortoise SVN", imageSrc: "/assets/skills/tortoise.png" }
+    { title: "Tortoise SVN", imageSrc: "/assets/skills/tortoise.png" },
   ];
 
   const containerVariants = {
