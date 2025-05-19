@@ -131,7 +131,7 @@ ul {
 
 .home-section {
   display: flex;
-  filter: brightness(90%);
+  filter: brightness(100%);
 }
 
 .overlay {
