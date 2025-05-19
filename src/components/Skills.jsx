@@ -37,43 +37,39 @@ const Skills = () => {
   const itemVariants = {
     hidden: {
       opacity: 0,
-      x: -100,
-      y: -50,
-      rotate: -10,
-      scale: 0.8
+      y: 20,
+      scale: 0.9
     },
     visible: {
       opacity: 1,
-      x: 0,
       y: 0,
-      rotate: 0,
       scale: 1,
       transition: {
         type: "spring",
-        stiffness: 150,
-        damping: 15
+        stiffness: 100,
+        damping: 10
       }
     }
   };
 
   return (
-    <section id="skills" className="skills-section text-center py-12">
-      <div className="container mx-auto">
-        <h2 className="text-3xl font-bold mb-8">My Skills</h2>
+    <section id="skills" className="skills-section text-center py-8 md:py-12">
+      <div className="container mx-auto px-4">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">My Skills</h2>
 
         <motion.div
           className="row g-2 mt-4 flex flex-wrap justify-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }} // 👈 Trigger when 30% of the section is visible
+          viewport={{ once: true, amount: 0.2 }}
         >
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              className="col-lg-2 col-md-3 col-sm-4 mb-4 p-2"
+              className="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 px-2"
               variants={itemVariants}
-              whileHover={{ scale: 1.05, rotate: 2 }}
+              whileHover={{ scale: 1.05 }}
             >
               <CardComponent
                 imageSrc={skill.imageSrc}
