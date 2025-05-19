@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,23 @@ const Contact = () => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    const checkScrollTop = () => {
+      if (!showScroll && window.pageYOffset > 300) {
+        setShowScroll(true);
+      } else if (showScroll && window.pageYOffset <= 300) {
+        setShowScroll(false);
+      }
+    };
+    window.addEventListener("scroll", checkScrollTop);
+    return () => window.removeEventListener("scroll", checkScrollTop);
+  }, [showScroll]);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -58,7 +76,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="contact-section py-5">
+    <section id="contact" className="contact-section py-5" style={{ position: "relative" }}>
       <div className="container">
         <h2 className="text-center mb-4">Contact Me</h2>
         <div className="row justify-content-center">
@@ -148,6 +166,17 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      {showScroll && (
+        <button
+          onClick={scrollToTop}
+          className="scroll-to-top-btn"
+          aria-label="Scroll to top"
+          title="Scroll to top"
+              >
+          <FontAwesomeIcon icon={faArrowUp} />
+        </button>
+      )}
     </section>
   );
 };
