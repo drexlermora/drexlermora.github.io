@@ -39,8 +39,13 @@ const ParticlesBackground = () => {
         out_mode: "out",
         bounce: false,
       },
-      line_linked: {
-        enable: false,
+      // Change from line_linked to links for newer versions
+      links: {
+        enable: true,      // Enable connection lines
+        distance: 150,     // Max distance to draw lines between particles
+        color: "#ffffff",  // Line color
+        opacity: 0.4,
+        width: 1,
       },
     },
     interactivity: {
@@ -48,7 +53,7 @@ const ParticlesBackground = () => {
       events: {
         onhover: {
           enable: true,
-          mode: ["bubble", "attract"],  // both bubble and attract on hover
+          mode: ["grab", "bubble"],  // Grab mode for connected effect + bubble
         },
         onclick: {
           enable: true,
@@ -57,17 +62,18 @@ const ParticlesBackground = () => {
         resize: true,
       },
       modes: {
+        grab: {
+          distance: 200,
+          links: {
+            opacity: 1,
+          },
+        },
         bubble: {
           distance: 250,
           size: 20,
           duration: 2,
           opacity: 0.8,
           speed: 3,
-        },
-        attract: {
-          distance: 200,
-          duration: 0.4,
-          speed: 1,
         },
         push: {
           particles_nb: 4,
@@ -76,7 +82,7 @@ const ParticlesBackground = () => {
     },
     retina_detect: true,
   };
-  
+
   return (
     <Particles
       id="tsparticles"
