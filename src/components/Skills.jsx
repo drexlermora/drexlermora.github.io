@@ -12,6 +12,7 @@ const Skills = () => {
     { title: "CSS3", imageSrc: "/assets/skills/CSS3_logo.svg" },
     { title: "Bootstrap", imageSrc: "/assets/skills/bootstrap-logo.svg" },
     { title: "Node", imageSrc: "/assets/skills/nodejs.png" },
+    { title: "Vite", imageSrc: "/assets/skills/vite.png" },
     { title: "JavaScript", imageSrc: "/assets/skills/js.png" },
     { title: "TypeScript", imageSrc: "/assets/skills/Typescript_logo_2020.svg" },
     { title: "VB.net", imageSrc: "/assets/skills/vb.png" },
