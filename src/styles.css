@@ -129,19 +129,26 @@ ul {
   color: white; 
 }
 
-
 .home-section {
-  height: 80vh;
-  background: url('/assets/bg2.jpg') no-repeat center center fixed;
-  background-size: cover;
-  text-align: center;
-  color: white;
+  display: flex;
+  filter: brightness(90%);
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
-  filter: brightness(75%);
+  gap: 1rem;
+  padding: 20px;
+  color: white;
+
+  z-index: 10;
 }
 
 .home-section h1 {
@@ -154,7 +161,6 @@ ul {
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
   .home-section {
-    background: url('/assets/bg2.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: scroll;
   }
