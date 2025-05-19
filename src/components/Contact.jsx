@@ -83,7 +83,7 @@ const Contact = () => {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={handleChange}
-                  requiredn
+                  required
                 />
               </div>
               <div className="form-group mb-3">
