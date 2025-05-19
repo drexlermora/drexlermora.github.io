@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 const Skills = () => {
   const skills = [
-    { title: "Java Spring Boot", imageSrc: "assets/skills/spring_boot.png" },
-    { title: "Java Spring MVC", imageSrc: "assets/skills/spring_mvc.png" },
+    { title: "Java Spring Boot", imageSrc: "/assets/skills/spring_boot.png" },
+    { title: "Java Spring MVC", imageSrc: "/assets/skills/spring_mvc.png" },
     { title: "Play Framework", imageSrc: "/assets/skills/playfm.png" },
     { title: "Apache Wicket", imageSrc: "/assets/skills/wicket-logo.png" },
     { title: "React", imageSrc: "/assets/skills/react.png" },
