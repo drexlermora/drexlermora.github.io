@@ -22,9 +22,9 @@ const Home = () => {
           alt="Portrait"
         />
         <div className="mirror">
-          <h1 className="text-uppercase text-white text-3xl md:text-5xl font-bold">
+          <h3 className="text-uppercase text-white text-3xl md:text-5xl font-bold">
             <Typewriter
-              words={["Hi, I'm Drexler"]}
+              words={["Drexler Mora 👨‍💻 | Software Engineer ⚙️ | JLPT N3✅"]}
               loop={1}
               cursor
               cursorStyle="_"
@@ -32,7 +32,7 @@ const Home = () => {
               deleteSpeed={50}
               delaySpeed={1000}
             />
-          </h1>
+          </h3>
         </div>
       </div>
     </section>
