@@ -1,5 +1,5 @@
 import React from "react";
-import ParticlesBackground from "./others/ParticlesBackground"; // adjust path if needed
+import ParticlesBackground from "./others/ParticlesBackground"; 
 
 const Home = () => {
   return (
