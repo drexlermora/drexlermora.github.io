@@ -60,8 +60,7 @@ const Skills = () => {
   return (
     <section id="skills" className="skills-section text-center py-8 md:py-12">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">My Skills</h2>
-
+      <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">My Skills</h2>
         <motion.div
           className="row g-2 mt-4 flex flex-wrap justify-center"
           variants={containerVariants}
