@@ -1,6 +1,5 @@
 import React from "react";
 import ParticlesBackground from "./others/ParticlesBackground";
-import { Typewriter } from "react-simple-typewriter";
 
 const Home = () => {
   return (
@@ -23,15 +22,7 @@ const Home = () => {
         />
         <div className="mirror">
           <h4 className="text-uppercase text-white text-3xl md:text-5xl font-bold">
-            <Typewriter
-              words={["Drexler Mora 👨‍💻 | Software Engineer ⚙️ | JLPT N3✅"]}
-              loop={1}
-              cursor
-              cursorStyle="_"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
-            />
+            Drexler Mora 👨‍💻 | Software Engineer ⚙️ | JLPT N3✅
           </h4>
         </div>
       </div>
