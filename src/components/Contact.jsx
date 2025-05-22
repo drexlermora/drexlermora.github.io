@@ -234,30 +234,6 @@ const Contact = () => {
             </div>
           </div>
         </div>
-
-        {showScroll && (
-          <button
-            onClick={scrollToTop}
-            className="scroll-to-top-btn"
-            aria-label="Scroll to top"
-            title="Scroll to top"
-            style={{
-              backgroundColor: "white",
-              color: "black",
-              borderRadius: "50%",
-              border: "none",
-              padding: "0.5rem 0.7rem",
-              position: "fixed",
-              bottom: "2rem",
-              right: "2rem",
-              cursor: "pointer",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
-              zIndex: 1000,
-            }}
-          >
-            <FontAwesomeIcon icon={faArrowUp} />
-          </button>
-        )}
       </motion.div>
     </section>
   );
