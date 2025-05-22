@@ -2,9 +2,26 @@ import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { faArrowUp, faEnvelope } from '@fortawesome/free-solid-svg-icons'; // added faEnvelope
+import { faArrowUp, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { motion } from "framer-motion";
 
 const Contact = () => {
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.innerHTML = `
+      input::placeholder,
+      textarea::placeholder {
+        color: #ffffff !important;
+        opacity: 1 !important;
+        filter: brightness(100%);
+      }
+    `;
+    document.head.appendChild(style);
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -46,7 +63,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setIsError(false);
     setIsSubmitted(false);
 
@@ -63,26 +79,43 @@ const Contact = () => {
         "oVppYxZNeacD3WiS1"
       )
       .then(
-        (result) => {
-          console.log(result.text);
+        () => {
           setIsSubmitted(true);
           setFormData({ name: "", email: "", message: "" });
         },
-        (error) => {
-          console.log(error.text);
+        () => {
           setIsError(true);
         }
       );
   };
 
+  const motionVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section id="contact" className="contact-section py-5" style={{ position: "relative" }}>
-      <div className="container">
-        <h2 className="text-center mb-4 flex items-center justify-center gap-3">
+    <section
+      id="contact"
+      className="contact-section py-5 bg-black text-white"
+      style={{ position: "relative" }}
+    >
+      <motion.div
+        className="container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={motionVariants}
+      >
+        <h2 className="text-center mb-4 flex items-center justify-center gap-3 text-white">
           Contact Me
           <FontAwesomeIcon
             icon={faEnvelope}
-            className="text-gray-700"
+            className="text-white"
             style={{ fontSize: "2.5rem", marginLeft: "0.5rem" }}
             aria-label="Contact Me"
             title="Contact Me"
@@ -95,97 +128,137 @@ const Contact = () => {
                 <input
                   type="text"
                   name="name"
-                  className="form-control"
+                  className="form-control bg-black text-white border-white"
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  style={{ borderWidth: "1.5px" }}
                 />
               </div>
               <div className="form-group mb-3">
                 <input
                   type="email"
                   name="email"
-                  className="form-control"
+                  className="form-control bg-black text-white border-white"
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  style={{ borderWidth: "1.5px" }}
                 />
               </div>
               <div className="form-group mb-3">
                 <textarea
                   name="message"
-                  className="form-control"
+                  className="form-control bg-black text-white border-white"
                   placeholder="Your Message"
                   rows="4"
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  style={{ borderWidth: "1.5px" }}
                 />
               </div>
 
               <div className="text-center">
-                <button type="submit" className="btn btn-primary">
+                <button
+                  type="submit"
+                  className="btn btn-outline-light"
+                  style={{ borderWidth: "1.5px" }}
+                >
                   Send Message
                 </button>
               </div>
             </form>
 
             {isSubmitted && (
-              <div className="alert alert-success mt-4" role="alert">
+              <div
+                className="alert alert-success mt-4"
+                role="alert"
+                style={{ backgroundColor: "#222", color: "#d1e7dd", borderColor: "#badbcc" }}
+              >
                 Thank you! Your message has been sent.
               </div>
             )}
 
             {isError && (
-              <div className="alert alert-danger mt-4" role="alert">
+              <div
+                className="alert alert-danger mt-4"
+                role="alert"
+                style={{ backgroundColor: "#222", color: "#f8d7da", borderColor: "#f5c2c7" }}
+              >
                 Please fill out all fields correctly or check your internet connection.
               </div>
             )}
 
-            <div className="text-center mt-4">
-              <a
-                href="https://www.linkedin.com/in/john-drexler-mora-3a7744122/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-dark mr-2"
-              >
-                <FontAwesomeIcon icon={faLinkedin} size="2x" className="mr-2" />
-              </a>
-
-              <a
-                href="https://github.com/drexlermora"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-dark mr-2"
-              >
-                <FontAwesomeIcon icon={faGithub} size="2x" className="mr-2" />
-              </a>
-
-              <a
-                href="https://www.facebook.com/drexler.mora"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-dark"
-              >
-                <FontAwesomeIcon icon={faFacebook} size="2x" className="mr-2" />
-              </a>
+            <div className="text-center mt-4 space-x-4">
+              {[ 
+                {
+                  href: "https://www.linkedin.com/in/john-drexler-mora-3a7744122/",
+                  icon: faLinkedin,
+                  label: "LinkedIn",
+                },
+                {
+                  href: "https://github.com/drexlermora",
+                  icon: faGithub,
+                  label: "GitHub",
+                },
+                {
+                  href: "https://www.facebook.com/drexler.mora",
+                  icon: faFacebook,
+                  label: "Facebook",
+                },
+              ].map(({ href, icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-dark"
+                  style={{
+                    filter: "grayscale(100%) brightness(150%)",
+                    borderRadius: "0.375rem",
+                    padding: "0.375rem 0.75rem",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginRight: "0.5rem"
+                  }}
+                  aria-label={label}
+                  title={label}
+                >
+                  <FontAwesomeIcon icon={icon} size="2x" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
-      </div>
 
-      {showScroll && (
-        <button
-          onClick={scrollToTop}
-          className="scroll-to-top-btn"
-          aria-label="Scroll to top"
-          title="Scroll to top"
-        >
-          <FontAwesomeIcon icon={faArrowUp} />
-        </button>
-      )}
+        {showScroll && (
+          <button
+            onClick={scrollToTop}
+            className="scroll-to-top-btn"
+            aria-label="Scroll to top"
+            title="Scroll to top"
+            style={{
+              backgroundColor: "white",
+              color: "black",
+              borderRadius: "50%",
+              border: "none",
+              padding: "0.5rem 0.7rem",
+              position: "fixed",
+              bottom: "2rem",
+              right: "2rem",
+              cursor: "pointer",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+              zIndex: 1000,
+            }}
+          >
+            <FontAwesomeIcon icon={faArrowUp} />
+          </button>
+        )}
+      </motion.div>
     </section>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import CardComponent from "./others/CardComponent";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTools } from "@fortawesome/free-solid-svg-icons"; // toolbox icon
+import { faTools } from "@fortawesome/free-solid-svg-icons";
 
 const Skills = () => {
   const skills = [
@@ -60,13 +60,16 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="skills-section text-center py-8 md:py-12">
+    <section
+      id="skills"
+      className="skills-section text-center py-8 md:py-12 bg-black text-white"
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 flex items-center justify-center gap-3">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 flex items-center justify-center gap-3 text-white">
           My Skills
           <FontAwesomeIcon
             icon={faTools}
-            className="text-gray-700"
+            className="text-white"
             style={{ fontSize: "2.5rem", marginLeft: "0.5rem" }}
             aria-label="Skills"
             title="Skills"
@@ -86,7 +89,12 @@ const Skills = () => {
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
             >
-              <CardComponent imageSrc={skill.imageSrc} title={skill.title} />
+              <div className="rounded-md transition-transform duration-300 hover:scale-105">
+                <CardComponent
+                  imageSrc={skill.imageSrc}
+                  title={skill.title}
+                />
+              </div>
             </motion.div>
           ))}
         </motion.div>
