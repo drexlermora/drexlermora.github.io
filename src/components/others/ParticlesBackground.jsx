@@ -9,43 +9,55 @@ const ParticlesBackground = () => {
 
   const options = {
     fullScreen: { enable: false },
+    background: {
+      color: "#000000", // pure black background to highlight white particles
+    },
     particles: {
       number: {
-        value: 40,
-        density: { enable: true, value_area: 800 },
+        value: 100,
+        density: { enable: true, value_area: 1200 },
       },
-      color: { value: ["#3498db", "#2980b9", "#1abc9c", "#16a085"] },
-      shape: { type: "circle" },
+      color: { value: "#ffffff" },
+      shape: {
+        type: "circle",
+      },
       opacity: {
-        value: 0.6,
-        random: true,
-      },
-      size: {
-        value: 15,
+        value: 0.8,
         random: true,
         anim: {
           enable: true,
-          speed: 2,
-          size_min: 5,
+          speed: 1.5,
+          opacity_min: 0.3,
+          sync: false,
+        },
+      },
+      size: {
+        value: 2,
+        random: { enable: true, minimumValue: 1 },
+        anim: {
+          enable: true,
+          speed: 1,
+          size_min: 1,
           sync: false,
         },
       },
       move: {
         enable: true,
-        speed: 2,
+        speed: 0.3,
         direction: "none",
         random: true,
         straight: false,
         out_mode: "out",
         bounce: false,
       },
-      // Change from line_linked to links for newer versions
       links: {
-        enable: true,      // Enable connection lines
-        distance: 150,     // Max distance to draw lines between particles
-        color: "#ffffff",  // Line color
-        opacity: 0.4,
-        width: 1,
+        enable: true,
+        distance: 140,
+        color: "#ffffff",
+        opacity: 0.15,
+        width: 0.6,
+        blink: false,
+        consent: false,
       },
     },
     interactivity: {
@@ -53,36 +65,25 @@ const ParticlesBackground = () => {
       events: {
         onhover: {
           enable: true,
-          mode: ["grab", "bubble"],  // Grab mode for connected effect + bubble
+          mode: "grab",
         },
         onclick: {
-          enable: true,
-          mode: "push",
+          enable: false,
         },
         resize: true,
       },
       modes: {
         grab: {
-          distance: 200,
+          distance: 150,
           links: {
-            opacity: 1,
+            opacity: 0.4,
           },
-        },
-        bubble: {
-          distance: 250,
-          size: 20,
-          duration: 2,
-          opacity: 0.8,
-          speed: 3,
-        },
-        push: {
-          particles_nb: 4,
         },
       },
     },
     retina_detect: true,
   };
-
+  
   return (
     <Particles
       id="tsparticles"

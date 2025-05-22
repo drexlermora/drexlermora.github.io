@@ -22,7 +22,7 @@ const Home = () => {
         />
         <div className="mirror">
           <h4 className="text-uppercase text-white text-3xl md:text-5xl font-bold">
-            Drexler Mora 👨‍💻 | Software Engineer ⚙️ | JLPT N3✅
+            Drexler Mora | Software Engineer | JLPT N3
           </h4>
         </div>
       </div>

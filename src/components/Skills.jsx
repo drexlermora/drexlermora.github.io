@@ -1,6 +1,8 @@
 import React from "react";
 import CardComponent from "./others/CardComponent";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTools } from "@fortawesome/free-solid-svg-icons"; // toolbox icon
 
 const Skills = () => {
   const skills = [
@@ -34,16 +36,16 @@ const Skills = () => {
     visible: {
       transition: {
         staggerChildren: 0.07,
-        delayChildren: 0.3
-      }
-    }
+        delayChildren: 0.3,
+      },
+    },
   };
 
   const itemVariants = {
     hidden: {
       opacity: 0,
       y: 20,
-      scale: 0.9
+      scale: 0.9,
     },
     visible: {
       opacity: 1,
@@ -52,15 +54,24 @@ const Skills = () => {
       transition: {
         type: "spring",
         stiffness: 100,
-        damping: 10
-      }
-    }
+        damping: 10,
+      },
+    },
   };
 
   return (
     <section id="skills" className="skills-section text-center py-8 md:py-12">
       <div className="container mx-auto px-4">
-      <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">My Skills</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 flex items-center justify-center gap-3">
+          My Skills
+          <FontAwesomeIcon
+            icon={faTools}
+            className="text-gray-700"
+            style={{ fontSize: "2.5rem", marginLeft: "0.5rem" }}
+            aria-label="Skills"
+            title="Skills"
+          />
+        </h2>
         <motion.div
           className="row g-2 mt-4 flex flex-wrap justify-center"
           variants={containerVariants}
@@ -75,10 +86,7 @@ const Skills = () => {
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
             >
-              <CardComponent
-                imageSrc={skill.imageSrc}
-                title={skill.title}
-              />
+              <CardComponent imageSrc={skill.imageSrc} title={skill.title} />
             </motion.div>
           ))}
         </motion.div>
