@@ -66,7 +66,7 @@ const Skills = () => {
     >
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 flex items-center justify-center gap-3 text-white">
-          My Skills
+          Skills
           <FontAwesomeIcon
             icon={faTools}
             className="text-white"

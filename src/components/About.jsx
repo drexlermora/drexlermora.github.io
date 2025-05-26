@@ -29,7 +29,7 @@ const About = () => {
           animate={isInView ? { scale: 1, opacity: 1 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          About Me
+          Profile
           <FontAwesomeIcon
             icon={faUserCircle}
             className="text-white"
