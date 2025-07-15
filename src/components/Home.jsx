@@ -1,14 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ParticlesBackground from "./others/ParticlesBackground";
 
 const Home = () => {
-  const [flip, setFlip] = useState(false);
-
-  useEffect(() => {
-    // Trigger animation on mount
-    setFlip(true);
-  }, []);
-
   return (
     <section
       id="home"
@@ -24,7 +17,7 @@ const Home = () => {
       <div className="overlay">
         <img
           src="/assets/skills/2x2.jpg"
-          className={`round-image ${flip ? "flip-animation" : ""}`}
+          className="round-image"
           alt="Portrait"
         />
         <div className="mirror">
